@@ -28,20 +28,15 @@ function StudentForm({ onSubmit, initialData }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="grid gap-3 mb-6">
-      {['name', 'age', 'className', 'roll', 'city'].map((field) => (
-        <input
-          key={field}
-          name={field}
-          value={form[field]}
-          onChange={handleChange}
-          placeholder={field[0].toUpperCase() + field.slice(1)}
-          className="border border-gray-300 p-2 rounded-md"
-        />
-      ))}
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <input name="name" value={form.name} onChange={handleChange} placeholder="Name" />
+      <input name="age" type="number" min="1"value={form.age} onChange={handleChange} placeholder="Age" />
+      <input name="className" value={form.className} onChange={handleChange} placeholder="Class" />
+      <input name="roll" type="number" min="1" value={form.roll} onChange={handleChange} placeholder="Roll Number" />
+      <input name="city" value={form.city} onChange={handleChange} placeholder="City" />
       <button
         type="submit"
-        className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+        className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition"
       >
         Save
       </button>
